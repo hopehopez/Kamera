@@ -13,6 +13,7 @@
 		1BFD9C042512107F00495C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C022512107F00495C70 /* Main.storyboard */; };
 		1BFD9C062512108100495C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C052512108100495C70 /* Assets.xcassets */; };
 		1BFD9C092512108100495C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C072512108100495C70 /* LaunchScreen.storyboard */; };
+		1BFD9C152512138000495C70 /* ZFlashControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9C142512138000495C70 /* ZFlashControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1BFD9C052512108100495C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BFD9C082512108100495C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BFD9C0A2512108100495C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BFD9C142512138000495C70 /* ZFlashControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFlashControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		1BFD9BFB2512107F00495C70 /* Kamera */ = {
 			isa = PBXGroup;
 			children = (
+				1BFD9C132512132000495C70 /* Controllers */,
+				1BFD9C122512130F00495C70 /* Views */,
+				1BFD9C112512130100495C70 /* Models */,
 				1BFD9BFC2512107F00495C70 /* AppDelegate.swift */,
 				1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */,
-				1BFD9C002512107F00495C70 /* ViewController.swift */,
 				1BFD9C022512107F00495C70 /* Main.storyboard */,
 				1BFD9C052512108100495C70 /* Assets.xcassets */,
 				1BFD9C072512108100495C70 /* LaunchScreen.storyboard */,
 				1BFD9C0A2512108100495C70 /* Info.plist */,
 			);
 			path = Kamera;
+			sourceTree = "<group>";
+		};
+		1BFD9C112512130100495C70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1BFD9C122512130F00495C70 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BFD9C142512138000495C70 /* ZFlashControl.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1BFD9C132512132000495C70 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BFD9C002512107F00495C70 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 				1BFD9C012512107F00495C70 /* ViewController.swift in Sources */,
 				1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */,
 				1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */,
+				1BFD9C152512138000495C70 /* ZFlashControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
