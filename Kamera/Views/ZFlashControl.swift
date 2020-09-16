@@ -50,6 +50,12 @@ class ZFlashControl: UIControl {
     
     func setupView() {
         
+        backgroundColor = UIColor.clear
+        let iconImage = UIImage(named: "flash_icon")
+        let imageView = UIImageView(image: iconImage)
+        addSubview(imageView)
+        imageView.frame = CGRect(x: imageView.frame.minX, y: (frame.height-imageView.frame.height)/2, width: imageView.frame.width, height: imageView.frame.height)
+        
         
         
     }
