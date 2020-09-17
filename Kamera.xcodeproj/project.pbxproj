@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B8B3E94251367FC00F7AD9F /* ZCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E93251367FC00F7AD9F /* ZCameraView.swift */; };
+		1B8B3E972513681A00F7AD9F /* ZOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E962513681A00F7AD9F /* ZOverlayView.swift */; };
+		1B8B3E9A2513682D00F7AD9F /* ZPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E992513682C00F7AD9F /* ZPreviewView.swift */; };
+		1B8B3E9D251369B200F7AD9F /* ZStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E9C251369B200F7AD9F /* ZStatusView.swift */; };
+		1B8B3EA0251369DC00F7AD9F /* ZCameraModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E9F251369DC00F7AD9F /* ZCameraModeView.swift */; };
+		1B8B3EA325136A0400F7AD9F /* ZCaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3EA225136A0400F7AD9F /* ZCaptureButton.swift */; };
 		1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9BFC2512107F00495C70 /* AppDelegate.swift */; };
 		1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */; };
 		1BFD9C012512107F00495C70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9C002512107F00495C70 /* ViewController.swift */; };
@@ -17,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B8B3E93251367FC00F7AD9F /* ZCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCameraView.swift; sourceTree = "<group>"; };
+		1B8B3E962513681A00F7AD9F /* ZOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOverlayView.swift; sourceTree = "<group>"; };
+		1B8B3E992513682C00F7AD9F /* ZPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPreviewView.swift; sourceTree = "<group>"; };
+		1B8B3E9C251369B200F7AD9F /* ZStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStatusView.swift; sourceTree = "<group>"; };
+		1B8B3E9F251369DC00F7AD9F /* ZCameraModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCameraModeView.swift; sourceTree = "<group>"; };
+		1B8B3EA225136A0400F7AD9F /* ZCaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCaptureButton.swift; sourceTree = "<group>"; };
 		1BFD9BF92512107F00495C70 /* Kamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFD9BFC2512107F00495C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				1BFD9C142512138000495C70 /* ZFlashControl.swift */,
+				1B8B3E93251367FC00F7AD9F /* ZCameraView.swift */,
+				1B8B3E962513681A00F7AD9F /* ZOverlayView.swift */,
+				1B8B3E992513682C00F7AD9F /* ZPreviewView.swift */,
+				1B8B3E9C251369B200F7AD9F /* ZStatusView.swift */,
+				1B8B3E9F251369DC00F7AD9F /* ZCameraModeView.swift */,
+				1B8B3EA225136A0400F7AD9F /* ZCaptureButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,10 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B8B3EA0251369DC00F7AD9F /* ZCameraModeView.swift in Sources */,
+				1B8B3E972513681A00F7AD9F /* ZOverlayView.swift in Sources */,
 				1BFD9C012512107F00495C70 /* ViewController.swift in Sources */,
 				1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */,
+				1B8B3E9A2513682D00F7AD9F /* ZPreviewView.swift in Sources */,
 				1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */,
+				1B8B3E9D251369B200F7AD9F /* ZStatusView.swift in Sources */,
+				1B8B3EA325136A0400F7AD9F /* ZCaptureButton.swift in Sources */,
 				1BFD9C152512138000495C70 /* ZFlashControl.swift in Sources */,
+				1B8B3E94251367FC00F7AD9F /* ZCameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
