@@ -10,9 +10,11 @@ import UIKit
 
 class ZCameraView: UIView {
 
-    private(set) var previewView: ZPreviewView!
-    private(set) var controlsView: ZOverlayView!
+   @IBOutlet private(set) var previewView: ZPreviewView!
+   @IBOutlet private(set) var controlsView: ZOverlayView!
 
-    
-    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = UIColor.black
+    }
 }

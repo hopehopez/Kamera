@@ -1,24 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="ZCameraView" customModule="Kamera" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGU-Es-xTG" customClass="ZPreviewView" customModule="Kamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euM-Y1-cFY" customClass="ZOverlayView" customModule="Kamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwS-UZ-NTK" customClass="ZCameraModeView" customModule="Kamera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="708" width="414" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-cD-Egr" customClass="ZCaptureButton" customModule="Kamera" customModuleProvider="target">
+                                                <rect key="frame" x="173" y="34" width="68" height="68"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="VKK-lT-AhR"/>
+                                                    <constraint firstAttribute="width" constant="68" id="faa-HT-gpA"/>
+                                                </constraints>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="aM3-cD-Egr" firstAttribute="centerX" secondItem="gwS-UZ-NTK" secondAttribute="centerX" id="8BC-iY-DqP"/>
+                                            <constraint firstAttribute="bottom" secondItem="aM3-cD-Egr" secondAttribute="bottom" constant="8" id="9RY-uB-hmB"/>
+                                            <constraint firstAttribute="height" constant="110" id="HKS-T4-p95"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="captureButton" destination="aM3-cD-Egr" id="L4s-eR-vwb"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-6v-TNW" customClass="ZStatusView" customModule="Kamera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-Sz-X1V" customClass="ZFlashControl" customModule="Kamera" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="0.0" width="48" height="48"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="Yxe-oJ-WdG"/>
+                                                    <constraint firstAttribute="height" constant="48" id="sI9-gp-SDJ"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-4x-uuA">
+                                                <rect key="frame" x="171.5" y="13.5" width="71" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="dAj-Sz-X1V" firstAttribute="top" secondItem="2EU-6v-TNW" secondAttribute="top" id="DnJ-3O-GTo"/>
+                                            <constraint firstItem="BTe-4x-uuA" firstAttribute="centerY" secondItem="2EU-6v-TNW" secondAttribute="centerY" id="Xph-Hs-4XM"/>
+                                            <constraint firstItem="BTe-4x-uuA" firstAttribute="centerX" secondItem="2EU-6v-TNW" secondAttribute="centerX" id="bte-FV-xZo"/>
+                                            <constraint firstItem="dAj-Sz-X1V" firstAttribute="leading" secondItem="2EU-6v-TNW" secondAttribute="leading" constant="16" id="dwQ-te-769"/>
+                                            <constraint firstAttribute="bottom" secondItem="dAj-Sz-X1V" secondAttribute="bottom" id="iJE-6R-VQd"/>
+                                            <constraint firstAttribute="height" constant="48" id="o0N-1s-TQQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="elapsedTimeLabel" destination="BTe-4x-uuA" id="RGO-Gt-zER"/>
+                                            <outlet property="flashControl" destination="dAj-Sz-X1V" id="I8h-0M-aSV"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gwS-UZ-NTK" firstAttribute="leading" secondItem="euM-Y1-cFY" secondAttribute="leading" id="LNn-HO-hqS"/>
+                                    <constraint firstItem="2EU-6v-TNW" firstAttribute="leading" secondItem="euM-Y1-cFY" secondAttribute="leading" id="SZm-xU-SNx"/>
+                                    <constraint firstAttribute="trailing" secondItem="2EU-6v-TNW" secondAttribute="trailing" id="bqd-dL-Wbf"/>
+                                    <constraint firstAttribute="trailing" secondItem="gwS-UZ-NTK" secondAttribute="trailing" id="joC-Zj-tAa"/>
+                                    <constraint firstItem="2EU-6v-TNW" firstAttribute="top" secondItem="euM-Y1-cFY" secondAttribute="top" id="u2I-PE-icj"/>
+                                    <constraint firstAttribute="bottom" secondItem="gwS-UZ-NTK" secondAttribute="bottom" id="yS1-au-7W1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="modeView" destination="gwS-UZ-NTK" id="Wk2-to-o5M"/>
+                                    <outlet property="statusView" destination="2EU-6v-TNW" id="19K-yx-ceV"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="euM-Y1-cFY" secondAttribute="bottom" id="9R5-Qv-Apq"/>
+                            <constraint firstItem="tGU-Es-xTG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fsg-Q5-7mq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tGU-Es-xTG" secondAttribute="trailing" id="JQ3-gg-Vj4"/>
+                            <constraint firstItem="euM-Y1-cFY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="M4m-Fi-D04"/>
+                            <constraint firstItem="euM-Y1-cFY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wso-6F-lPB"/>
+                            <constraint firstAttribute="trailing" secondItem="euM-Y1-cFY" secondAttribute="trailing" id="Yg5-Os-1Qz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tGU-Es-xTG" secondAttribute="bottom" id="bL4-tl-kAh"/>
+                            <constraint firstItem="tGU-Es-xTG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sGx-gU-mIE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

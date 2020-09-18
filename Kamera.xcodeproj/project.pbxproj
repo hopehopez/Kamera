@@ -13,6 +13,8 @@
 		1B8B3E9D251369B200F7AD9F /* ZStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E9C251369B200F7AD9F /* ZStatusView.swift */; };
 		1B8B3EA0251369DC00F7AD9F /* ZCameraModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E9F251369DC00F7AD9F /* ZCameraModeView.swift */; };
 		1B8B3EA325136A0400F7AD9F /* ZCaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3EA225136A0400F7AD9F /* ZCaptureButton.swift */; };
+		1BF10AFC25148A7000282D55 /* record_start.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1BF10AFA25148A7000282D55 /* record_start.caf */; };
+		1BF10AFD25148A7000282D55 /* record_stop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1BF10AFB25148A7000282D55 /* record_stop.caf */; };
 		1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9BFC2512107F00495C70 /* AppDelegate.swift */; };
 		1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */; };
 		1BFD9C012512107F00495C70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9C002512107F00495C70 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		1B8B3E9C251369B200F7AD9F /* ZStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStatusView.swift; sourceTree = "<group>"; };
 		1B8B3E9F251369DC00F7AD9F /* ZCameraModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCameraModeView.swift; sourceTree = "<group>"; };
 		1B8B3EA225136A0400F7AD9F /* ZCaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCaptureButton.swift; sourceTree = "<group>"; };
+		1BF10AFA25148A7000282D55 /* record_start.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = record_start.caf; sourceTree = "<group>"; };
+		1BF10AFB25148A7000282D55 /* record_stop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = record_stop.caf; sourceTree = "<group>"; };
 		1BFD9BF92512107F00495C70 /* Kamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFD9BFC2512107F00495C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				1BFD9C052512108100495C70 /* Assets.xcassets */,
 				1BFD9C072512108100495C70 /* LaunchScreen.storyboard */,
 				1BFD9C0A2512108100495C70 /* Info.plist */,
+				1BF10AFA25148A7000282D55 /* record_start.caf */,
+				1BF10AFB25148A7000282D55 /* record_stop.caf */,
 			);
 			path = Kamera;
 			sourceTree = "<group>";
@@ -170,6 +176,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF10AFD25148A7000282D55 /* record_stop.caf in Resources */,
+				1BF10AFC25148A7000282D55 /* record_start.caf in Resources */,
 				1BFD9C092512108100495C70 /* LaunchScreen.storyboard in Resources */,
 				1BFD9C062512108100495C70 /* Assets.xcassets in Resources */,
 				1BFD9C042512107F00495C70 /* Main.storyboard in Resources */,

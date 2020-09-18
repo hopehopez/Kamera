@@ -8,14 +8,41 @@
 
 import UIKit
 
-class ZStatusView: UIView {
+class ZStatusView: UIView, ZFlashControlDelegate {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+   @IBOutlet var flashControl: ZFlashControl!
+   @IBOutlet var elapsedTimeLabel: UILabel!
+    
+
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+//        setupView()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
+    }
+    
+    func setupView() {
+        flashControl.delegate = self
+    }
+    
+    func flashControlWillExpand() {
+        UIView.animate(withDuration: 0.2) {
+            self.elapsedTimeLabel.alpha = 0
+        }
+    }
+    
+    func flashControlWillCollapse() {
+        UIView.animate(withDuration: 0.2) {
+            self.elapsedTimeLabel.alpha = 1.0
+        }
+    }
 }
