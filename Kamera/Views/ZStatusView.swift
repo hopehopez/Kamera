@@ -22,7 +22,6 @@ class ZStatusView: UIView, ZFlashControlDelegate {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        setupView()
     }
     
     override func awakeFromNib() {

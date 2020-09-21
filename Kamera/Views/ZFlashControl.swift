@@ -57,6 +57,7 @@ class ZFlashControl: UIControl {
     }
     private var midY: CGFloat!
     private var labels: [UILabel]!
+   
         
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: ICON_WIDTH + BUTTON_WIDTH, height: BUTTON_HEIGHT))
@@ -65,7 +66,6 @@ class ZFlashControl: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
     }
     
     override func awakeFromNib() {

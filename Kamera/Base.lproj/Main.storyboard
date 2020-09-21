@@ -49,13 +49,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-6v-TNW" customClass="ZStatusView" customModule="Kamera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-Sz-X1V" customClass="ZFlashControl" customModule="Kamera" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-Sz-X1V" customClass="ZFlashControl" customModule="Kamera" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="0.0" width="48" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="Yxe-oJ-WdG"/>
-                                                    <constraint firstAttribute="height" constant="48" id="sI9-gp-SDJ"/>
-                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-4x-uuA">
                                                 <rect key="frame" x="171.5" y="13.5" width="71" height="21"/>
@@ -66,11 +63,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="dAj-Sz-X1V" firstAttribute="top" secondItem="2EU-6v-TNW" secondAttribute="top" id="DnJ-3O-GTo"/>
                                             <constraint firstItem="BTe-4x-uuA" firstAttribute="centerY" secondItem="2EU-6v-TNW" secondAttribute="centerY" id="Xph-Hs-4XM"/>
                                             <constraint firstItem="BTe-4x-uuA" firstAttribute="centerX" secondItem="2EU-6v-TNW" secondAttribute="centerX" id="bte-FV-xZo"/>
-                                            <constraint firstItem="dAj-Sz-X1V" firstAttribute="leading" secondItem="2EU-6v-TNW" secondAttribute="leading" constant="16" id="dwQ-te-769"/>
-                                            <constraint firstAttribute="bottom" secondItem="dAj-Sz-X1V" secondAttribute="bottom" id="iJE-6R-VQd"/>
                                             <constraint firstAttribute="height" constant="48" id="o0N-1s-TQQ"/>
                                         </constraints>
                                         <connections>

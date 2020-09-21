@@ -58,8 +58,8 @@ class ZCaptureButton: UIButton {
                 animationGroup.beginTime = CACurrentMediaTime() + 0.2
                 animationGroup.duration = 0.35
                 
-                circleLayer.setValue(scaleAnimation, forKeyPath: "transform.scale")
-                circleLayer.setValue(radiusAnimation, forKeyPath: "cornerRadius")
+                circleLayer.setValue(scaleAnimation.toValue, forKeyPath: "transform.scale")
+                circleLayer.setValue(radiusAnimation.toValue, forKeyPath: "cornerRadius")
                 
                 circleLayer.add(animationGroup, forKey: "scaleAndRadiusAnimation")
                 

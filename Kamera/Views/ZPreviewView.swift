@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol ZPreviewViewDelegate: NSObjectProtocol {
+    func tappedToFocusAtPoint(point: CGPoint)
+    func tappedToExposeAtPoint(point: CGPoint)
+    func tappedToResetFocusAndExposure()
+}
+
 class ZPreviewView: UIView {
 
    

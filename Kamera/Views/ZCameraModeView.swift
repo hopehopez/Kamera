@@ -47,6 +47,10 @@ class ZCameraModeView: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupView()
     }
 
