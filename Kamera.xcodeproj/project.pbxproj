@@ -22,6 +22,7 @@
 		1BFD9C062512108100495C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C052512108100495C70 /* Assets.xcassets */; };
 		1BFD9C092512108100495C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C072512108100495C70 /* LaunchScreen.storyboard */; };
 		1BFD9C152512138000495C70 /* ZFlashControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9C142512138000495C70 /* ZFlashControl.swift */; };
+		7CC487212518F6B60015EDF4 /* ZCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC487202518F6B60015EDF4 /* ZCameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1BFD9C082512108100495C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BFD9C0A2512108100495C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BFD9C142512138000495C70 /* ZFlashControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFlashControl.swift; sourceTree = "<group>"; };
+		7CC487202518F6B60015EDF4 /* ZCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				1BFD9C002512107F00495C70 /* ViewController.swift */,
+				7CC487202518F6B60015EDF4 /* ZCameraController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				1BFD9C012512107F00495C70 /* ViewController.swift in Sources */,
 				1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */,
 				1B8B3E9A2513682D00F7AD9F /* ZPreviewView.swift in Sources */,
+				7CC487212518F6B60015EDF4 /* ZCameraController.swift in Sources */,
 				1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */,
 				1B8B3E9D251369B200F7AD9F /* ZStatusView.swift in Sources */,
 				1B8B3EA325136A0400F7AD9F /* ZCaptureButton.swift in Sources */,
@@ -276,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -346,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Kamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Kamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

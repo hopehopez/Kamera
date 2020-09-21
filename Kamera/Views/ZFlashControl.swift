@@ -116,7 +116,8 @@ class ZFlashControl: UIControl {
             delegate?.flashControlWillExpand()
             let BOLD_FONT = UIFont(name: "AvenirNextCondensed-DemiBold", size: FONT_SIZE)
             let NORMAL_FONT = UIFont(name: "AvenirNextCondensed-Medium", size: FONT_SIZE)
-            UIView.animate(withDuration: 0.3) {
+           
+            UIView.animate(withDuration: 0.3, animations: {
                 var newFrame = self.frame
                 newFrame.size.width = self.expandedWidth
                 self.frame = newFrame
@@ -129,7 +130,7 @@ class ZFlashControl: UIControl {
                     }
                  }
                 
-            } completion: { (_) in
+            }) { (_) in
                 self.delegate?.flashControlDidExpand()
             }
 
@@ -145,7 +146,7 @@ class ZFlashControl: UIControl {
                     selectedIndex = i
                     label.textAlignment = .left
                     
-                    UIView.animate(withDuration: 0.2) {
+                    UIView.animate(withDuration: 0.2, animations: {
                         for i in 0..<self.labels.count {
                             let label = self.labels[i]
                             if i == self.selectedIndex {
@@ -159,10 +160,11 @@ class ZFlashControl: UIControl {
                         var newFrame = self.frame
                         newFrame.size.width = self.defaultWidth
                         self.frame = newFrame
-                    } completion: { (_) in
+                    }) { (_) in
                         self.delegate?.flashControlDidCollapse()
                     }
-
+                    
+    
                 }
             }
         }

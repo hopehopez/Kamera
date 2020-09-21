@@ -88,20 +88,20 @@ class ZCameraModeView: UIControl {
     
     @objc func switchMode(recognizer: UISwipeGestureRecognizer) {
         if recognizer.direction == .left && !maxLeft{
-            UIView.animate(withDuration: 0.28, delay: 0.0, options: .curveEaseInOut) {
+            UIView.animate(withDuration: 0.28, delay: 0.0, options: .curveEaseInOut, animations: {
                 var newFrame = self.labelContainerView.frame
                 newFrame.origin.x -= 62
                 self.labelContainerView.frame = newFrame
                 
-                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveLinear) {
+                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveLinear, animations: {
                     CATransaction.disableActions()
                     self.photoTextLayer.foregroundColor = self.foregroundColor.cgColor
                     self.videoTextLayer.foregroundColor = UIColor.white.cgColor
-                } completion: { (_) in
+                }) { (_) in
                     
                 }
 
-            } completion: { (_) in
+            }) { (_) in
                 self.cameraModel = .photo
                 self.maxLeft = true
                 self.maxRight = false
@@ -109,20 +109,21 @@ class ZCameraModeView: UIControl {
 
 
         } else if recognizer.direction == .right && !maxRight{
-            UIView.animate(withDuration: 0.28, delay: 0.0, options: .curveEaseInOut) {
+            
+            UIView.animate(withDuration: 0.28, delay: 0.0, options: .curveEaseInOut, animations: {
                 var newFrame = self.labelContainerView.frame
                 newFrame.origin.x += 62
                 self.labelContainerView.frame = newFrame
                 
-                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveLinear) {
+                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveLinear, animations: {
                     CATransaction.disableActions()
                     self.videoTextLayer.foregroundColor = self.foregroundColor.cgColor
                     self.photoTextLayer.foregroundColor = UIColor.white.cgColor
-                } completion: { (_) in
+                }) { (_) in
                     
                 }
 
-            } completion: { (_) in
+            }) { (_) in
                 self.cameraModel = .video
                 self.maxLeft = false
                 self.maxRight = true
