@@ -28,7 +28,7 @@ class ZOverlayView: UIView {
     }
     
     @objc func modeChanged(modelView: ZCameraModeView) {
-        let photoModeEnabled  = modeView.cameraModel == .photo
+        let photoModeEnabled  = modeView.cameraMode == .photo
         let toColor = photoModeEnabled ? UIColor.black : UIColor(white: 0.0, alpha: 0.5)
         let toOpacity: CGFloat = photoModeEnabled ? 0.0 : 1.0
         statusView.layer.backgroundColor = toColor.cgColor

@@ -16,7 +16,8 @@ protocol ZCameraControllerDelegate: NSObjectProtocol {
 }
 
 
-class ZCameraController: NSObject {
+class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
+   
     
     weak var delegate: ZCameraControllerDelegate?
     private(set) var captureSession: AVCaptureSession!
@@ -364,12 +365,50 @@ class ZCameraController: NSObject {
     //视频录制
     //开始录制
     func startRecording() {
+        guard isRecording() == false else {
+            return
+        }
         
+        //获取当前视频捕捉连接信息，用于捕捉视频数据配置一些核心属性
+        guard let connection = imageOutput.connection(with: .video) else { return }
+        
+        
+        //判断是否支持设置videoOrientation 属性。
+        if connection.isVideoOrientationSupported {
+            connection.videoOrientation = currentVideoOrientation()
+        }
+        
+        //判断是否支持视频稳定 可以显著提高视频的质量。只会在录制视频文件涉及
+        if connection.isVideoStabilizationSupported {
+            connection.enablesVideoStabilizationWhenAvailable = true
+        }
+        
+        let device = activeCamera()
+        
+        //摄像头可以进行平滑对焦模式操作。即减慢摄像头镜头对焦速度。当用户移动拍摄时摄像头会尝试快速自动对焦。
+        if device.isSmoothAutoFocusSupported {
+            do {
+                try device.lockForConfiguration()
+                device.isSmoothAutoFocusEnabled = true
+                device.unlockForConfiguration()
+            } catch  {
+                delegate?.deviceConfigurationFailedWithError(error: error)
+            }
+        }
+        
+        //查找写入捕捉视频的唯一文件系统URL.
+        let url = uniqueURL()
+        
+        //在捕捉输出上调用方法 参数1:录制保存路径  参数2:代理
+        movieOutput.startRecording(to: url, recordingDelegate: self)
     }
     
     //停止录制
     func stopRecording() {
-        
+        //是否正在录制
+        if isRecording() {
+            movieOutput.stopRecording()
+        }
     }
     
     //获取录制状态
@@ -418,4 +457,71 @@ class ZCameraController: NSObject {
             }
         }
     }
+    
+    func postThumbnailNotifification(image: UIImage) {
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: Notification.Name.init("ThumbnailCreatedNotification"), object: image)
+        }
+    }
+    
+    func uniqueURL() -> URL {
+        let tempUrl = NSTemporaryDirectory() + "kamera.XXXXXX" + "\(Int(Date().timeIntervalSince1970))" + ".mov"
+        return URL(fileURLWithPath: tempUrl)
+        
+    }
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        
+        if error != nil {
+            delegate?.mediaCaptureFailedWithError(error: error!)
+        } else {
+            writeVideoToAssetsLibrary(videoURL: outputFileURL)
+        }
+    }
+    
+    //写入捕捉到的视频
+    func writeVideoToAssetsLibrary(videoURL: URL) {
+        //ALAssetsLibrary 实例 提供写入视频的接口
+        let library = ALAssetsLibrary()
+        //写资源库写入前，检查视频是否可被写入 （写入前尽量养成判断的习惯）
+        guard library.videoAtPathIs(compatibleWithSavedPhotosAlbum: videoURL) else {
+            return
+        }
+        
+        library.writeVideoAtPath(toSavedPhotosAlbum: videoURL) { (assetURL, error) in
+            if error != nil {
+                self.delegate?.assetLibraryWriteFailedWithError(error: error!)
+            } else {
+                self.generateThumbnailForVideoAtURL(videoURL: assetURL!)
+            }
+        }
+    }
+    
+    //获取视频左下角缩略图
+    @objc func generateThumbnailForVideoAtURL(videoURL: URL) {
+        videoQueue.async {
+            //建立新的AVAsset & AVAssetImageGenerator
+            let asset = AVAsset(url: videoURL)
+            
+            let imageGenerator = AVAssetImageGenerator(asset: asset)
+            
+            //设置maximumSize 宽为100，高为0 根据视频的宽高比来计算图片的高度
+            imageGenerator.maximumSize = CGSize(width: 100.0, height: 0.0)
+            
+            //捕捉视频缩略图会考虑视频的变化（如视频的方向变化），如果不设置，缩略图的方向可能出错
+            imageGenerator.appliesPreferredTrackTransform = true
+            
+            //获取CGImageRef图片 注意需要自己管理它的创建和释放
+            guard  let cgImage = try? imageGenerator.copyCGImage(at: .zero, actualTime: nil) else { return }
+            
+            //将图片转化为UIImage
+            let image = UIImage(cgImage: cgImage)
+            
+            
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: Notification.Name.init("ThumbnailCreatedNotification"), object: image)
+        }
+        }
+    }
+       
 }

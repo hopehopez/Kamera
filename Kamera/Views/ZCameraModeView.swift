@@ -15,9 +15,9 @@ enum ZCameraMode: Int{
 
 class ZCameraModeView: UIControl {
 
-    var cameraModel = ZCameraMode.video {
+    var cameraMode = ZCameraMode.video {
         didSet{
-            if cameraModel == .photo {
+            if cameraMode == .photo {
                 captureButton.isSelected = false
                 captureButton.captureButtonMode = .photo
                 layer.backgroundColor = UIColor.black.cgColor
@@ -102,7 +102,7 @@ class ZCameraModeView: UIControl {
                 }
 
             }) { (_) in
-                self.cameraModel = .photo
+                self.cameraMode = .photo
                 self.maxLeft = true
                 self.maxRight = false
             }
@@ -124,7 +124,7 @@ class ZCameraModeView: UIControl {
                 }
 
             }) { (_) in
-                self.cameraModel = .video
+                self.cameraMode = .video
                 self.maxLeft = false
                 self.maxRight = true
             }

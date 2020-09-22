@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,13 +25,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwS-UZ-NTK" customClass="ZCameraModeView" customModule="Kamera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="708" width="414" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-cD-Egr" customClass="ZCaptureButton" customModule="Kamera" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-cD-Egr" customClass="ZCaptureButton" customModule="Kamera" customModuleProvider="target">
                                                 <rect key="frame" x="173" y="34" width="68" height="68"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="68" id="VKK-lT-AhR"/>
                                                     <constraint firstAttribute="width" constant="68" id="faa-HT-gpA"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="captureOrRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hdv-JP-5J3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6de-rN-AWz">
+                                                <rect key="frame" x="20" y="45.5" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="4FM-IX-qWB"/>
+                                                    <constraint firstAttribute="height" constant="45" id="J8M-QI-gRF"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="showCameraRoll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwK-fm-i3D"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -41,8 +52,11 @@
                                             <constraint firstItem="aM3-cD-Egr" firstAttribute="centerX" secondItem="gwS-UZ-NTK" secondAttribute="centerX" id="8BC-iY-DqP"/>
                                             <constraint firstAttribute="bottom" secondItem="aM3-cD-Egr" secondAttribute="bottom" constant="8" id="9RY-uB-hmB"/>
                                             <constraint firstAttribute="height" constant="110" id="HKS-T4-p95"/>
+                                            <constraint firstItem="6de-rN-AWz" firstAttribute="centerY" secondItem="aM3-cD-Egr" secondAttribute="centerY" id="iXH-Gp-KlJ"/>
+                                            <constraint firstItem="6de-rN-AWz" firstAttribute="leading" secondItem="gwS-UZ-NTK" secondAttribute="leading" constant="20" id="zuX-mW-MHC"/>
                                         </constraints>
                                         <connections>
+                                            <action selector="cameraModeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Er4-zd-fXL"/>
                                             <outlet property="captureButton" destination="aM3-cD-Egr" id="L4s-eR-vwb"/>
                                         </connections>
                                     </view>
@@ -52,7 +66,10 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-Sz-X1V" customClass="ZFlashControl" customModule="Kamera" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="0.0" width="48" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <connections>
+                                                    <action selector="flashControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Jw2-7B-80M"/>
+                                                </connections>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-4x-uuA">
                                                 <rect key="frame" x="171.5" y="13.5" width="71" height="21"/>
@@ -60,10 +77,23 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSy-lI-MOC">
+                                                <rect key="frame" x="370" y="2" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="8SM-HR-SPs"/>
+                                                    <constraint firstAttribute="width" constant="44" id="xHL-UM-PGO"/>
+                                                </constraints>
+                                                <state key="normal" image="camera_icon"/>
+                                                <connections>
+                                                    <action selector="swapCameras:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vks-zA-p0W"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="GSy-lI-MOC" firstAttribute="centerY" secondItem="2EU-6v-TNW" secondAttribute="centerY" id="IjP-mU-GdL"/>
                                             <constraint firstItem="BTe-4x-uuA" firstAttribute="centerY" secondItem="2EU-6v-TNW" secondAttribute="centerY" id="Xph-Hs-4XM"/>
+                                            <constraint firstAttribute="trailing" secondItem="GSy-lI-MOC" secondAttribute="trailing" id="Zza-dh-8sF"/>
                                             <constraint firstItem="BTe-4x-uuA" firstAttribute="centerX" secondItem="2EU-6v-TNW" secondAttribute="centerX" id="bte-FV-xZo"/>
                                             <constraint firstAttribute="height" constant="48" id="o0N-1s-TQQ"/>
                                         </constraints>
@@ -88,7 +118,6 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="euM-Y1-cFY" secondAttribute="bottom" id="9R5-Qv-Apq"/>
@@ -100,7 +129,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tGU-Es-xTG" secondAttribute="bottom" id="bL4-tl-kAh"/>
                             <constraint firstItem="tGU-Es-xTG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sGx-gU-mIE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="overlayView" destination="euM-Y1-cFY" id="aNk-LX-8qg"/>
+                        <outlet property="previewView" destination="tGU-Es-xTG" id="vsi-qV-Df9"/>
+                        <outlet property="thumbnailButton" destination="6de-rN-AWz" id="IYe-g3-hif"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,8 +143,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="camera_icon" width="28" height="21"/>
     </resources>
 </document>
