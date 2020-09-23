@@ -8,7 +8,7 @@
 
 import AVFoundation
 import UIKit
-import AssetsLibrary
+import Photos
 protocol ZCameraControllerDelegate: NSObjectProtocol {
     func deviceConfigurationFailedWithError(error: Error)
     func mediaCaptureFailedWithError(error: Error)
@@ -380,7 +380,7 @@ class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
         
         //判断是否支持视频稳定 可以显著提高视频的质量。只会在录制视频文件涉及
         if connection.isVideoStabilizationSupported {
-            connection.enablesVideoStabilizationWhenAvailable = true
+            connection.preferredVideoStabilizationMode = .auto
         }
         
         let device = activeCamera()
@@ -418,7 +418,7 @@ class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
     
     //录制时间
     func recordedDuration() -> CMTime {
-        return CMTime(seconds: 1, preferredTimescale: .zero)
+        return movieOutput.recordedDuration
     }
     
     //获取方向值
@@ -442,14 +442,12 @@ class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
         注意：会访问到相册，需要修改plist 权限。否则会导致项目崩溃
      */
     func writeImageToAssetsLibrary(image: UIImage) {
-        //创建ALAssetsLibrary  实例
-        let library = ALAssetsLibrary()
         
-        //参数1:图片（参数为CGImageRef 所以image.CGImage）
-        //参数2:方向参数 转为NSUInteger
-        //参数3:写入成功、失败处理
-        library.writeImage(toSavedPhotosAlbum: image.cgImage, orientation: ALAssetOrientation(rawValue: image.imageOrientation.rawValue)!) { (url, error) in
-            if error != nil {
+        PHPhotoLibrary.shared().performChanges {
+            PHAssetChangeRequest.creationRequestForAsset(from: image)
+        } completionHandler: { (success, error) in
+            if success {
+                self.postThumbnailNotifification(image: image)
                 print("保存成功")
             } else {
                 //失败打印错误信息
@@ -460,7 +458,7 @@ class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
     
     func postThumbnailNotifification(image: UIImage) {
         DispatchQueue.main.async {
-            NotificationCenter.default.post(name: Notification.Name.init("ThumbnailCreatedNotification"), object: image)
+            NotificationCenter.default.post(name: Notification.Name.init("ZThumbnailCreatedNotification"), object: image)
         }
     }
     
@@ -481,18 +479,13 @@ class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
     
     //写入捕捉到的视频
     func writeVideoToAssetsLibrary(videoURL: URL) {
-        //ALAssetsLibrary 实例 提供写入视频的接口
-        let library = ALAssetsLibrary()
-        //写资源库写入前，检查视频是否可被写入 （写入前尽量养成判断的习惯）
-        guard library.videoAtPathIs(compatibleWithSavedPhotosAlbum: videoURL) else {
-            return
-        }
-        
-        library.writeVideoAtPath(toSavedPhotosAlbum: videoURL) { (assetURL, error) in
+        PHPhotoLibrary.shared().performChanges {
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: videoURL)
+        } completionHandler: { (success, error) in
             if error != nil {
                 self.delegate?.assetLibraryWriteFailedWithError(error: error!)
             } else {
-                self.generateThumbnailForVideoAtURL(videoURL: assetURL!)
+                self.generateThumbnailForVideoAtURL(videoURL: videoURL)
             }
         }
     }
@@ -519,7 +512,7 @@ class ZCameraController: NSObject, AVCaptureFileOutputRecordingDelegate {
             
             
         DispatchQueue.main.async {
-            NotificationCenter.default.post(name: Notification.Name.init("ThumbnailCreatedNotification"), object: image)
+            NotificationCenter.default.post(name: Notification.Name.init("ZThumbnailCreatedNotification"), object: image)
         }
         }
     }

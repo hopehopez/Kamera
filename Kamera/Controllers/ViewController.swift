@@ -16,22 +16,22 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var thumbnailButton: UIButton!
     var cameraController = ZCameraController()
-    var timer: Timer!
+    var timer: Timer?
     var cameraMode: ZCameraMode = .video
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+
         if cameraController.setupSession() {
             previewView.session = self.cameraController.captureSession
             previewView.delegate = self
             cameraController.startSession()
         }
-        
+
         previewView.tapToFocusEnabled = cameraController.cameraSupportsTapToFocus
         previewView.tapToExposeEnabled = cameraController.cameraSupportsTapToExpose
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(updateThumbnail(notification:)), name: Notification.Name.init("ZThumbnailCreatedNotification"), object: nil)
     }
     
@@ -52,15 +52,20 @@ class ViewController: UIViewController {
     }
     
 
-    @IBAction func captureOrRecord(_ sender: Any) {
+    @IBAction func captureOrRecord(_ sender: ZCaptureButton) {
         if cameraMode == .photo {
             cameraController.captureStillImage()
         } else {
             if !cameraController.isRecording() {
                 DispatchQueue(label: "com.tapharmonic.kamera").async {
                     self.cameraController.startRecording()
+                    self.startTimer()
                 }
+            } else {
+                cameraController.stopRecording()
+                stopTimer()
             }
+            sender.isSelected = !sender.isSelected
         }
     }
     
@@ -91,12 +96,24 @@ class ViewController: UIViewController {
     }
     
     func startTimer() {
-        timer.invalidate()
+        timer?.invalidate()
         timer = Timer(timeInterval: 0.5, target: self, selector: #selector(updateTimeDisplay), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+        overlayView.statusView.elapsedTimeLabel.text = "00:00:00"
     }
     
     @objc func updateTimeDisplay(){
+        
         let duration = cameraController.recordedDuration()
+        guard !CMTimeGetSeconds(duration).isNaN else {
+            return
+        }
+        
         let time = Int(CMTimeGetSeconds(duration))
         let hours = time / 3600
         let minutes = (time / 60)%60

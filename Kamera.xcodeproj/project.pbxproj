@@ -16,7 +16,6 @@
 		1BF10AFC25148A7000282D55 /* record_start.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1BF10AFA25148A7000282D55 /* record_start.caf */; };
 		1BF10AFD25148A7000282D55 /* record_stop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1BF10AFB25148A7000282D55 /* record_stop.caf */; };
 		1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9BFC2512107F00495C70 /* AppDelegate.swift */; };
-		1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */; };
 		1BFD9C012512107F00495C70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD9C002512107F00495C70 /* ViewController.swift */; };
 		1BFD9C042512107F00495C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C022512107F00495C70 /* Main.storyboard */; };
 		1BFD9C062512108100495C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFD9C052512108100495C70 /* Assets.xcassets */; };
@@ -36,7 +35,6 @@
 		1BF10AFB25148A7000282D55 /* record_stop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = record_stop.caf; sourceTree = "<group>"; };
 		1BFD9BF92512107F00495C70 /* Kamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFD9BFC2512107F00495C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1BFD9C002512107F00495C70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BFD9C032512107F00495C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BFD9C052512108100495C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				1BFD9C122512130F00495C70 /* Views */,
 				1BFD9C112512130100495C70 /* Models */,
 				1BFD9BFC2512107F00495C70 /* AppDelegate.swift */,
-				1BFD9BFE2512107F00495C70 /* SceneDelegate.swift */,
 				1BFD9C022512107F00495C70 /* Main.storyboard */,
 				1BFD9C052512108100495C70 /* Assets.xcassets */,
 				1BFD9C072512108100495C70 /* LaunchScreen.storyboard */,
@@ -200,7 +197,6 @@
 				1BFD9BFD2512107F00495C70 /* AppDelegate.swift in Sources */,
 				1B8B3E9A2513682D00F7AD9F /* ZPreviewView.swift in Sources */,
 				7CC487212518F6B60015EDF4 /* ZCameraController.swift in Sources */,
-				1BFD9BFF2512107F00495C70 /* SceneDelegate.swift in Sources */,
 				1B8B3E9D251369B200F7AD9F /* ZStatusView.swift in Sources */,
 				1B8B3EA325136A0400F7AD9F /* ZCaptureButton.swift in Sources */,
 				1BFD9C152512138000495C70 /* ZFlashControl.swift in Sources */,
@@ -280,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -334,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -349,17 +345,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4PCT9JY79J;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = Kamera/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zsq.Kamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -372,17 +366,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4PCT9JY79J;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = Kamera/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zsq.Kamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

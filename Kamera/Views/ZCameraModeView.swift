@@ -22,7 +22,6 @@ class ZCameraModeView: UIControl {
                 captureButton.captureButtonMode = .photo
                 layer.backgroundColor = UIColor.black.cgColor
             } else {
-                captureButton.isSelected = true
                 captureButton.captureButtonMode = .video
                 layer.backgroundColor = UIColor(white: 0.0, alpha: 0.5).cgColor
             }
@@ -55,6 +54,9 @@ class ZCameraModeView: UIControl {
     }
 
     func setupView() {
+        maxRight = true
+        cameraMode = .video
+        
         backgroundColor = UIColor(white: 0.0, alpha: 0.5)
         foregroundColor = UIColor(red: 1.0, green: 0.734, blue: 0.006, alpha: 1.0)
         

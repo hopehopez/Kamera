@@ -47,10 +47,10 @@ class ZCaptureButton: UIButton {
                 
                 if isSelected {
                     scaleAnimation.toValue = 0.6
-                    radiusAnimation.toValue = circleLayer.frame.width/4
+                    radiusAnimation.toValue = circleLayer.bounds.width/4
                 } else {
                     scaleAnimation.toValue  = 1.0
-                    radiusAnimation.toValue = circleLayer.frame.width/2
+                    radiusAnimation.toValue = circleLayer.bounds.width/2
                 }
                 
                 let animationGroup = CAAnimationGroup()
@@ -72,15 +72,20 @@ class ZCaptureButton: UIButton {
     let LINE_WIDTH: CGFloat = 6.0
     let DEFAULT_FRAME = CGRect(x: 0, y: 0, width: 68, height: 68)
     
-    convenience init(with mode: ZCaptureButtonMode) {
-        self.init()
-        
+//    convenience init(with mode: ZCaptureButtonMode) {
+//        self.init()
+//
+//        setupView()
+//    }
+    
+     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupView()
     }
 
