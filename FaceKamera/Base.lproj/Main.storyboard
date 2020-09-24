@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceKamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="ZCameraView" customModule="FaceKamera" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxa-AH-f2I" customClass="ZPreviewView" customModule="FaceKamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="649"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyU-i3-bQJ">
+                                <rect key="frame" x="0.0" y="693" width="375" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-iW-Ghf">
+                                        <rect key="frame" x="162.66666666666666" y="19.999999999999996" width="50" height="37.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2b4-iW-Ghf" secondAttribute="height" multiplier="65:49" id="RZW-NQ-ngc"/>
+                                            <constraint firstAttribute="width" constant="50" id="dNr-i8-S9a"/>
+                                        </constraints>
+                                        <state key="normal" image="big_camera_icon"/>
+                                        <connections>
+                                            <action selector="swapCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27Y-4G-bqc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="2cn-Ls-h96"/>
+                                    <constraint firstItem="2b4-iW-Ghf" firstAttribute="centerX" secondItem="vyU-i3-bQJ" secondAttribute="centerX" id="NmN-Ur-B68"/>
+                                    <constraint firstItem="2b4-iW-Ghf" firstAttribute="top" secondItem="vyU-i3-bQJ" secondAttribute="top" constant="20" id="nU0-xk-SlW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dxa-AH-f2I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="49f-Qx-vR2"/>
+                            <constraint firstItem="Dxa-AH-f2I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="86Q-MY-8lx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vyU-i3-bQJ" secondAttribute="bottom" id="D0R-mQ-1xl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dxa-AH-f2I" secondAttribute="trailing" id="Dp8-4a-Tmm"/>
+                            <constraint firstItem="vyU-i3-bQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jHp-5c-Zgi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vyU-i3-bQJ" secondAttribute="trailing" id="ljr-lO-OAi"/>
+                            <constraint firstItem="vyU-i3-bQJ" firstAttribute="top" secondItem="Dxa-AH-f2I" secondAttribute="bottom" id="ugO-Uh-zBl"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="previewView" destination="Dxa-AH-f2I" id="9u4-iK-ECP"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="Dxa-AH-f2I" id="QT4-kj-pfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="big_camera_icon" width="65" height="49"/>
+    </resources>
+</document>
