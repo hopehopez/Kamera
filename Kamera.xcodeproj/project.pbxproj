@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4268C4251CA12500A94709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268C3251CA12500A94709 /* AppDelegate.swift */; };
+		1B4268C8251CA12600A94709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268C7251CA12500A94709 /* ViewController.swift */; };
+		1B4268CB251CA12600A94709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4268C9251CA12600A94709 /* Main.storyboard */; };
+		1B4268CD251CA12700A94709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4268CC251CA12700A94709 /* Assets.xcassets */; };
+		1B4268D0251CA12700A94709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4268CE251CA12700A94709 /* LaunchScreen.storyboard */; };
+		1B4268E1251CA16C00A94709 /* ZFaceCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268DB251CA16C00A94709 /* ZFaceCameraController.swift */; };
+		1B4268E2251CA16C00A94709 /* ZCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268DC251CA16C00A94709 /* ZCameraDelegate.swift */; };
+		1B4268E3251CA16C00A94709 /* ZBaseCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268DD251CA16C00A94709 /* ZBaseCameraController.swift */; };
+		1B4268E4251CA16C00A94709 /* ZPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268DF251CA16C00A94709 /* ZPreviewView.swift */; };
+		1B4268E5251CA16C00A94709 /* ZCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268E0251CA16C00A94709 /* ZCameraView.swift */; };
+		1B4268EC251CA2D900A94709 /* ZCodeCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4268EB251CA2D900A94709 /* ZCodeCameraController.swift */; };
 		1B8B3E94251367FC00F7AD9F /* ZCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E93251367FC00F7AD9F /* ZCameraView.swift */; };
 		1B8B3E972513681A00F7AD9F /* ZOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E962513681A00F7AD9F /* ZOverlayView.swift */; };
 		1B8B3E9A2513682D00F7AD9F /* ZPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B3E992513682C00F7AD9F /* ZPreviewView.swift */; };
@@ -34,24 +45,20 @@
 		7CC487212518F6B60015EDF4 /* ZCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC487202518F6B60015EDF4 /* ZCameraController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1BC3E7A1251C50D300DE69C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1BFD9BF12512107F00495C70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1BC3E78A251C50D100DE69C9;
-			remoteInfo = FaceKamera;
-		};
-		1BC3E7AC251C50D300DE69C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1BFD9BF12512107F00495C70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1BC3E78A251C50D100DE69C9;
-			remoteInfo = FaceKamera;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		1B4268C1251CA12500A94709 /* CodeKamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeKamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4268C3251CA12500A94709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B4268C7251CA12500A94709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B4268CA251CA12600A94709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B4268CC251CA12700A94709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B4268CF251CA12700A94709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B4268D1251CA12700A94709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B4268DB251CA16C00A94709 /* ZFaceCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFaceCameraController.swift; sourceTree = "<group>"; };
+		1B4268DC251CA16C00A94709 /* ZCameraDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCameraDelegate.swift; sourceTree = "<group>"; };
+		1B4268DD251CA16C00A94709 /* ZBaseCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZBaseCameraController.swift; sourceTree = "<group>"; };
+		1B4268DF251CA16C00A94709 /* ZPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPreviewView.swift; sourceTree = "<group>"; };
+		1B4268E0251CA16C00A94709 /* ZCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCameraView.swift; sourceTree = "<group>"; };
+		1B4268EB251CA2D900A94709 /* ZCodeCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCodeCameraController.swift; sourceTree = "<group>"; };
 		1B8B3E93251367FC00F7AD9F /* ZCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCameraView.swift; sourceTree = "<group>"; };
 		1B8B3E962513681A00F7AD9F /* ZOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZOverlayView.swift; sourceTree = "<group>"; };
 		1B8B3E992513682C00F7AD9F /* ZPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPreviewView.swift; sourceTree = "<group>"; };
@@ -65,8 +72,6 @@
 		1BC3E796251C50D200DE69C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BC3E799251C50D200DE69C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BC3E79B251C50D200DE69C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BC3E7A0251C50D300DE69C9 /* FaceKameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceKameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BC3E7AB251C50D300DE69C9 /* FaceKameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceKameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC3E7C5251C515600DE69C9 /* ZCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCameraDelegate.swift; sourceTree = "<group>"; };
 		1BC3E7CF251C51E500DE69C9 /* ZBaseCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBaseCameraController.swift; sourceTree = "<group>"; };
 		1BC3E7D5251C559000DE69C9 /* ZFaceCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFaceCameraController.swift; sourceTree = "<group>"; };
@@ -86,21 +91,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B4268BE251CA12500A94709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BC3E788251C50D100DE69C9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BC3E79D251C50D300DE69C9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BC3E7A8251C50D300DE69C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -117,6 +115,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B4268C2251CA12500A94709 /* CodeKamera */ = {
+			isa = PBXGroup;
+			children = (
+				1B4268C3251CA12500A94709 /* AppDelegate.swift */,
+				1B4268C7251CA12500A94709 /* ViewController.swift */,
+				1B4268DA251CA16C00A94709 /* Controllers */,
+				1B4268DE251CA16C00A94709 /* Views */,
+				1B4268C9251CA12600A94709 /* Main.storyboard */,
+				1B4268CC251CA12700A94709 /* Assets.xcassets */,
+				1B4268CE251CA12700A94709 /* LaunchScreen.storyboard */,
+				1B4268D1251CA12700A94709 /* Info.plist */,
+			);
+			path = CodeKamera;
+			sourceTree = "<group>";
+		};
+		1B4268DA251CA16C00A94709 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B4268DC251CA16C00A94709 /* ZCameraDelegate.swift */,
+				1B4268DB251CA16C00A94709 /* ZFaceCameraController.swift */,
+				1B4268EB251CA2D900A94709 /* ZCodeCameraController.swift */,
+				1B4268DD251CA16C00A94709 /* ZBaseCameraController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1B4268DE251CA16C00A94709 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B4268DF251CA16C00A94709 /* ZPreviewView.swift */,
+				1B4268E0251CA16C00A94709 /* ZCameraView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1BC3E78C251C50D100DE69C9 /* FaceKamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +189,7 @@
 			children = (
 				1BFD9BFB2512107F00495C70 /* Kamera */,
 				1BC3E78C251C50D100DE69C9 /* FaceKamera */,
+				1B4268C2251CA12500A94709 /* CodeKamera */,
 				1BFD9BFA2512107F00495C70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,8 +199,7 @@
 			children = (
 				1BFD9BF92512107F00495C70 /* Kamera.app */,
 				1BC3E78B251C50D100DE69C9 /* FaceKamera.app */,
-				1BC3E7A0251C50D300DE69C9 /* FaceKameraTests.xctest */,
-				1BC3E7AB251C50D300DE69C9 /* FaceKameraUITests.xctest */,
+				1B4268C1251CA12500A94709 /* CodeKamera.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +254,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B4268C0251CA12500A94709 /* CodeKamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4268D2251CA12700A94709 /* Build configuration list for PBXNativeTarget "CodeKamera" */;
+			buildPhases = (
+				1B4268BD251CA12500A94709 /* Sources */,
+				1B4268BE251CA12500A94709 /* Frameworks */,
+				1B4268BF251CA12500A94709 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeKamera;
+			productName = CodeKamera;
+			productReference = 1B4268C1251CA12500A94709 /* CodeKamera.app */;
+			productType = "com.apple.product-type.application";
+		};
 		1BC3E78A251C50D100DE69C9 /* FaceKamera */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BC3E7B8251C50D300DE69C9 /* Build configuration list for PBXNativeTarget "FaceKamera" */;
@@ -237,42 +287,6 @@
 			productName = FaceKamera;
 			productReference = 1BC3E78B251C50D100DE69C9 /* FaceKamera.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1BC3E79F251C50D300DE69C9 /* FaceKameraTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1BC3E7B9251C50D300DE69C9 /* Build configuration list for PBXNativeTarget "FaceKameraTests" */;
-			buildPhases = (
-				1BC3E79C251C50D300DE69C9 /* Sources */,
-				1BC3E79D251C50D300DE69C9 /* Frameworks */,
-				1BC3E79E251C50D300DE69C9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1BC3E7A2251C50D300DE69C9 /* PBXTargetDependency */,
-			);
-			name = FaceKameraTests;
-			productName = FaceKameraTests;
-			productReference = 1BC3E7A0251C50D300DE69C9 /* FaceKameraTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1BC3E7AA251C50D300DE69C9 /* FaceKameraUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1BC3E7BA251C50D300DE69C9 /* Build configuration list for PBXNativeTarget "FaceKameraUITests" */;
-			buildPhases = (
-				1BC3E7A7251C50D300DE69C9 /* Sources */,
-				1BC3E7A8251C50D300DE69C9 /* Frameworks */,
-				1BC3E7A9251C50D300DE69C9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1BC3E7AD251C50D300DE69C9 /* PBXTargetDependency */,
-			);
-			name = FaceKameraUITests;
-			productName = FaceKameraUITests;
-			productReference = 1BC3E7AB251C50D300DE69C9 /* FaceKameraUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		1BFD9BF82512107F00495C70 /* Kamera */ = {
 			isa = PBXNativeTarget;
@@ -301,16 +315,11 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = zsq;
 				TargetAttributes = {
+					1B4268C0251CA12500A94709 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					1BC3E78A251C50D100DE69C9 = {
 						CreatedOnToolsVersion = 12.0;
-					};
-					1BC3E79F251C50D300DE69C9 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 1BC3E78A251C50D100DE69C9;
-					};
-					1BC3E7AA251C50D300DE69C9 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 1BC3E78A251C50D100DE69C9;
 					};
 					1BFD9BF82512107F00495C70 = {
 						CreatedOnToolsVersion = 11.6;
@@ -332,13 +341,22 @@
 			targets = (
 				1BFD9BF82512107F00495C70 /* Kamera */,
 				1BC3E78A251C50D100DE69C9 /* FaceKamera */,
-				1BC3E79F251C50D300DE69C9 /* FaceKameraTests */,
-				1BC3E7AA251C50D300DE69C9 /* FaceKameraUITests */,
+				1B4268C0251CA12500A94709 /* CodeKamera */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B4268BF251CA12500A94709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4268D0251CA12700A94709 /* LaunchScreen.storyboard in Resources */,
+				1B4268CD251CA12700A94709 /* Assets.xcassets in Resources */,
+				1B4268CB251CA12600A94709 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BC3E789251C50D100DE69C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,20 +364,6 @@
 				1BC3E79A251C50D200DE69C9 /* LaunchScreen.storyboard in Resources */,
 				1BC3E797251C50D200DE69C9 /* Assets.xcassets in Resources */,
 				1BC3E795251C50D100DE69C9 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BC3E79E251C50D300DE69C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BC3E7A9251C50D300DE69C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +382,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B4268BD251CA12500A94709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4268E1251CA16C00A94709 /* ZFaceCameraController.swift in Sources */,
+				1B4268E2251CA16C00A94709 /* ZCameraDelegate.swift in Sources */,
+				1B4268E5251CA16C00A94709 /* ZCameraView.swift in Sources */,
+				1B4268C8251CA12600A94709 /* ViewController.swift in Sources */,
+				1B4268EC251CA2D900A94709 /* ZCodeCameraController.swift in Sources */,
+				1B4268E4251CA16C00A94709 /* ZPreviewView.swift in Sources */,
+				1B4268C4251CA12500A94709 /* AppDelegate.swift in Sources */,
+				1B4268E3251CA16C00A94709 /* ZBaseCameraController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BC3E787251C50D100DE69C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,20 +408,6 @@
 				1BC3E7DF251C6FE900DE69C9 /* ZPreviewView.swift in Sources */,
 				1BC3E78E251C50D100DE69C9 /* AppDelegate.swift in Sources */,
 				1BC3E7C6251C515600DE69C9 /* ZCameraDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BC3E79C251C50D300DE69C9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BC3E7A7251C50D300DE69C9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,20 +430,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1BC3E7A2251C50D300DE69C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1BC3E78A251C50D100DE69C9 /* FaceKamera */;
-			targetProxy = 1BC3E7A1251C50D300DE69C9 /* PBXContainerItemProxy */;
-		};
-		1BC3E7AD251C50D300DE69C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1BC3E78A251C50D100DE69C9 /* FaceKamera */;
-			targetProxy = 1BC3E7AC251C50D300DE69C9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
+		1B4268C9251CA12600A94709 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4268CA251CA12600A94709 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B4268CE251CA12700A94709 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4268CF251CA12700A94709 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		1BC3E793251C50D100DE69C9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -474,6 +482,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1B4268D3251CA12700A94709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 87G4VVJARE;
+				INFOPLIST_FILE = CodeKamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiuyueqiji.CodeKamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B4268D4251CA12700A94709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 87G4VVJARE;
+				INFOPLIST_FILE = CodeKamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiuyueqiji.CodeKamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1BC3E7B2251C50D300DE69C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -517,92 +569,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		1BC3E7B4251C50D300DE69C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FaceKameraTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zsq.FaceKameraTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceKamera.app/FaceKamera";
-			};
-			name = Debug;
-		};
-		1BC3E7B5251C50D300DE69C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FaceKameraTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zsq.FaceKameraTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceKamera.app/FaceKamera";
-			};
-			name = Release;
-		};
-		1BC3E7B6251C50D300DE69C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FaceKameraUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zsq.FaceKameraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FaceKamera;
-			};
-			name = Debug;
-		};
-		1BC3E7B7251C50D300DE69C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FaceKameraUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zsq.FaceKameraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FaceKamera;
 			};
 			name = Release;
 		};
@@ -767,29 +733,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B4268D2251CA12700A94709 /* Build configuration list for PBXNativeTarget "CodeKamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4268D3251CA12700A94709 /* Debug */,
+				1B4268D4251CA12700A94709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1BC3E7B8251C50D300DE69C9 /* Build configuration list for PBXNativeTarget "FaceKamera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BC3E7B2251C50D300DE69C9 /* Debug */,
 				1BC3E7B3251C50D300DE69C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1BC3E7B9251C50D300DE69C9 /* Build configuration list for PBXNativeTarget "FaceKameraTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1BC3E7B4251C50D300DE69C9 /* Debug */,
-				1BC3E7B5251C50D300DE69C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1BC3E7BA251C50D300DE69C9 /* Build configuration list for PBXNativeTarget "FaceKameraUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1BC3E7B6251C50D300DE69C9 /* Debug */,
-				1BC3E7B7251C50D300DE69C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
